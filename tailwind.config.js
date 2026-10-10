@@ -6,7 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      // Add your custom colors, fonts, etc. here
+      fontFamily: {
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+      },
     },
   },
   plugins: [],
