@@ -1,5 +1,7 @@
 # ChainWorld
 
+> **Live Demo:** [https://chainworld.vercel.app](https://chainworld.vercel.app)
+
 A pixel-survival MMO built on [Monad Testnet](https://monad.xyz) — gate-kept by [Chog Genesis NFTs](https://testnet.monadexplorer.com/address/0x32A325b0640594377D0708Ca9081c93da95e1908).
 
 ## Overview
