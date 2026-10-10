@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0f1e;
+  --bg-gradient: linear-gradient(180deg, #0a0f1e 0%, #0d1520 58%, #0f1a2e 100%);
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(255, 255, 255, 0.10);
+  --surface-muted: #111827;
+  --ink: #f0f4ff;
+  --ink-2: #c8d6f0;
+  --muted: #8899bb;
+  --subtle: #5a6a88;
+  --border: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(150, 180, 240, 0.35);
+  --accent: #7eb3f8;
+  --accent-hover: #aaceff;
+  --success: #4ade80;
+  --danger: #f87171;
+  --chog-gold: #f5c542;
+  --chog-purple: #a855f7;
+  --monad-purple: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100dvh;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--ink);
+}
+
+.display {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', Menlo, monospace;
+}
+
+/* Meter bars */
+.meter-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--surface-strong);
+  overflow: hidden;
+  position: relative;
+}
+.meter-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glass card */
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.glass-strong {
+  background: var(--surface-strong);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+}
+
+/* Tier frames */
+.frame-genesis  { box-shadow: 0 0 0 2px #f5c542, 0 0 16px 2px rgba(245,197,66,0.4); }
+.frame-legendary { box-shadow: 0 0 0 2px #f5c542; }
+.frame-rare { box-shadow: 0 0 0 2px #a855f7; }
+.frame-uncommon { box-shadow: 0 0 0 2px #3b82f6; }
+.frame-common { box-shadow: 0 0 0 1px #475569; }
+.frame-floor { /* no frame */ }
+
+/* Glow pulse for live data */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--subtle); border-radius: 2px; }
+
+/* Number tabular */
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Degen Spiral flash */
+@keyframes danger-flash {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--danger); }
+}
+.danger-pulse {
+  animation: danger-flash 1s ease-in-out infinite;
+}
