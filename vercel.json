@@ -1,0 +1,11 @@
+{
+  "buildCommand": "bun run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "VITE_REGISTRY_ADDRESS": "0x6706b660883ce7f209eb5ea61a6114a1cac41a97"
+  }
+}
